@@ -19,8 +19,11 @@ constraints loa1_shortened_control do
   get 'sign_in', to: 'sign_in#index', as: :sign_in
   post 'sign_in', to: 'sign_in#select_idp', as: :sign_in_submit
 
-  get 'choose_a_certified_company', to: 'choose_a_certified_company#index', as: :choose_a_certified_company
-  post 'choose_a_certified_company', to: 'choose_a_certified_company#select_idp', as: :choose_a_certified_company_submit
+  constraints ->(request) { request.session['requested_loa'] == 'LEVEL_1' } do
+    get 'choose_a_certified_company', to: 'choose_a_certified_company_loa1#index', as: :choose_a_certified_company
+    post 'choose_a_certified_company', to: 'choose_a_certified_company_loa1#select_idp', as: :choose_a_certified_company_submit
+  end
+
 
   get 'why_companies', to: 'why_companies#index', as: :why_companies
 end
@@ -35,7 +38,9 @@ constraints loa1_shortened_variant_get_setup do
   get 'sign_in', to: 'sign_in_variant_get_setup#index', as: :sign_in
   post 'sign_in', to: 'sign_in_variant_get_setup#select_idp', as: :sign_in_submit
 
-  get 'choose_a_certified_company', to: 'choose_a_certified_company_variant_get_setup#index', as: :choose_a_certified_company
+  constraints ->(request) { request.session['requested_loa'] == 'LEVEL_1' } do
+    get 'choose_a_certified_company', to: 'choose_a_certified_company_variant_get_setup#index', as: :choose_a_certified_company
+  end
   post 'choose_a_certified_company', to: 'choose_a_certified_company_variant_get_setup#select_idp', as: :choose_a_certified_company_submit
 
   get 'why_companies', to: 'why_companies_variant_get_setup#index', as: :why_companies
@@ -51,7 +56,9 @@ constraints loa1_shortened_variant_create_account do
   get 'sign_in', to: 'sign_in_variant_create_account#index', as: :sign_in
   post 'sign_in', to: 'sign_in_variant_create_account#select_idp', as: :sign_in_submit
 
-  get 'choose_a_certified_company', to: 'choose_a_certified_company_variant_create_account#index', as: :choose_a_certified_company
+  constraints ->(request) { request.session['requested_loa'] == 'LEVEL_1' } do
+    get 'choose_a_certified_company', to: 'choose_a_certified_company_variant_create_account#index', as: :choose_a_certified_company
+  end
   post 'choose_a_certified_company', to: 'choose_a_certified_company_variant_create_account#select_idp', as: :choose_a_certified_company_submit
 
   get 'why_companies', to: 'why_companies_variant_create_account#index', as: :why_companies
