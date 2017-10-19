@@ -312,6 +312,11 @@ cy:
         <p>Using certified companies means data is not stored in one place by government.<p>
         <p></p>
         <p>Verifying your identity takes about 5 minutes to complete, and there’s no charge for this service.<p>
+      ab_test_variant_radio_account_question: With which company do you want to set up an identity account?
+      ab_test_variant_radio_account_button: Set up your identity account
+      ab_test_variant_radio_verify_question: Pick a company to verify you
+      ab_test_variant_radio_verify_button: Continue to the company website
+      ab_test_validation_error: Select a company to verify you
     why_companies:
       title: Pam fod dewis o gwmnïau
       choose_a_company: Dewiswch gwmni

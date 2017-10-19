@@ -31,3 +31,11 @@ experiments:
           percent: 0
         - name: 'no_logo_privacy'
           percent: 0
+  - loa1_picker:
+      alternatives:
+        - name: 'control'
+          percent: 100
+        - name: 'variant_radio_verify'
+          percent: 0
+        - name: 'variant_radio_account'
+          percent: 0
