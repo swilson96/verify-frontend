@@ -8,3 +8,7 @@ cache:
     - $HOME/.phantomjs 
 addons:
   firefox: "45.9.0esr"
+after_success:
+  - "./jenkins.sh"
+deploy:
+  skip_cleanup: true
