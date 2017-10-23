@@ -43,5 +43,5 @@ jobs:
 
       - run: bundle exec rake
 
-
+      - run: export BUILD_NUMBER=1
       - run: ./jenkins.sh
