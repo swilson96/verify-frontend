@@ -5,9 +5,8 @@ export HEADLESS=true
 export DISPLAY=:0
 ./pre-commit.sh
 echo ${BUILD_NUMBER} > .build-number
-. .env
-SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec rake assets:precompile
-SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec rake tmp:clear
+SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec dotenv rake assets:precompile
+SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec dotenv rake tmp:clear
 
 # We need to copy the manifest file to the root of the public/assets dir due
 # to heroku-buildback hardcoding where the manifest file should be
