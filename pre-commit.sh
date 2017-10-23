@@ -5,7 +5,7 @@
 export RAILS_ENV=test
 
 bundle check || bundle install
-bundle exec rake
+#bundle exec rake
 success=$((success || $?))
 
 # Stub API tests

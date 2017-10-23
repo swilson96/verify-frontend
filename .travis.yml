@@ -4,12 +4,11 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   - export BUILD_NUMBER=1
+script: "./jenkins.sh"
 cache:
   directories:
     - $HOME/.phantomjs 
 addons:
   firefox: "45.9.0esr"
-after_success:
-  - "./jenkins.sh"
 deploy:
   skip_cleanup: true
