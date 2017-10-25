@@ -17,5 +17,11 @@
 .DS_Store
 /spec/pacts
 
+# Artifacts of local build testing
+front_*.deb
+.build-number
+/public/assets
+
 *~
 \#*#
+
