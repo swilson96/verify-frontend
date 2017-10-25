@@ -4,8 +4,8 @@ bundle
 export HEADLESS=true
 export DISPLAY=:0
 export BUILD_NUMBER=1
-./pre-commit.sh
-echo ${BUILD_NUMBNER} > .build-number
+# ./pre-commit.sh
+echo ${BUILD_NUMBER} > .build-number
 
 bundle exec dotenv echo ${RP_DISPLAY_LOCALES}
 
