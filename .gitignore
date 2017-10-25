@@ -19,6 +19,7 @@
 
 # Artifacts of local build testing
 front_*.deb
+front-assets-*.deb
 .build-number
 /public/assets
 
