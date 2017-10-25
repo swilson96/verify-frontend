@@ -7,8 +7,6 @@ export BUILD_NUMBER=1
 # ./pre-commit.sh
 echo ${BUILD_NUMBER} > .build-number
 
-bundle exec dotenv echo ${RP_DISPLAY_LOCALES}
-
 SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec dotenv rake assets:precompile
 SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec dotenv rake tmp:clear
 
