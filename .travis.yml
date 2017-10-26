@@ -5,10 +5,9 @@ language: ruby
 services:
   - docker
 
-before_install:
-  - docker pull swilson96/frontend-spike
+before_install: docker build -t frontend-build .
 
-script: docker run -it --rm -v "$TRAVIS_BUILD_DIR:/app" swilson96/frontend-spike
+script: docker run -it --rm -v "$TRAVIS_BUILD_DIR:/app" frontend-build
 
 deploy:
   skip_cleanup: true

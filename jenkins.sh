@@ -4,7 +4,7 @@ bundle
 export HEADLESS=true
 export DISPLAY=:0
 export BUILD_NUMBER=1
-# ./pre-commit.sh
+# ./test.sh
 echo ${BUILD_NUMBER} > .build-number
 
 SECRET_KEY_BASE=no-secret RAILS_ENV=production bundle exec dotenv rake assets:precompile

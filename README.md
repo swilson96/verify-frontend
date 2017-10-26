@@ -6,7 +6,10 @@ The frontend for GOV.UK Verify
 
 ## Installing the application
 
-Once you’ve cloned this then `bundle` will install the requirements.
+Once you’ve cloned this then `bundle` will install the requirements locally.
+
+You'll also need to install [docker](https://docs.docker.com/docker-for-mac/install/#install-and-run-docker-for-mac)
+to run the pre-commit script and debug build failures.
 
 ## Running the application
 
@@ -26,8 +29,13 @@ and start your journey from the test-rp.
 `./pre-commit.sh`
 
 This will [lint the application code](https://github.com/alphagov/govuk-lint) and run the tests.
+It will do so inside a docker container, which means you don't need to worry about 
 
-If you need to run the javascript-enabled tests that require Firefox, you will need to have Firefox 47.0.1 installed.
+To do the same locally:
+
+`./test.sh`
+
+If you need to run _locally_ the javascript-enabled tests that require Firefox, you will need to have Firefox 47.0.1 installed.
 No other version of Firefox will do. The Managed Software Centre will constantly try and upgrade Firefox to an incompatible version.
 To get around this:
 

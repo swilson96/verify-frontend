@@ -7,6 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
+      # TODO:TT-1201 figure out how and where docker images will be published
        - image: swilson96/frontend-spike
       
       # Specify service dependencies here if necessary
